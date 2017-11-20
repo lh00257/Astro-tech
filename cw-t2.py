@@ -1,5 +1,6 @@
 import numpy as np
 from astropy.constants import G, M_sun, au
+from astropy.nddata import StdDevUncertainty, NDData
 
 a = 3.46 * au               #semi-maj axis in metres
 e = 0.64                    #eccentricity
@@ -14,6 +15,7 @@ L = np.sqrt(G.cgs*M_sun.cgs*a.cgs*(1-(e**2)))     #angular momentum per unit mas
 
 print("The orbital period is      = {:.4E}\n" .format(P))
 print("The perihelion distance is = {:.4E}\n" .format(r_p))
-print("The apohelion distance is  = {:.4E}\n" .format(r_a))
+print("The aphelion distance is  = {:.4E}\n" .format(r_a))
 print("The energy per unit mass is  = {:.4E}\n" .format(E))
 print("The angular momentum per unit mass is  = {:.4E}\n" .format(L))
+print(P/(365*24*60*60))
